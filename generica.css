@@ -142,14 +142,13 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 78% 18%, rgba(127,255,180,.18), transparent 16%),
-    radial-gradient(circle at 92% 42%, rgba(127,255,180,.16), transparent 18%),
-    radial-gradient(circle at 15% 22%, rgba(255,255,255,.05), transparent 18%),
-    url("img/molecule-bg.png");
+    linear-gradient(to right, rgba(10,40,35,0.9), rgba(10,40,35,0.6)),
+    url("IMG/144.png");
+
   background-size: cover;
   background-position: center;
-  opacity: .55;
-  animation: moleculeMove 14s ease-in-out infinite alternate;
+
+  filter: blur(2px);
 }
 
 @keyframes moleculeMove {
@@ -425,7 +424,7 @@ a {
   inset: 0;
   background:
     radial-gradient(circle at 76% 44%, rgba(127,255,180,.18), transparent 24%),
-    url("img/molecule-bg.png");
+    url("IMG/144.png");
   background-size: cover;
   background-position: center;
   opacity: .38;
@@ -684,4 +683,41 @@ a {
   .footer-generica {
     padding: 58px 24px 24px;
   }
+}
+
+.product-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 70, 71, 0.94);
+  color: white;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.product-overlay h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.product-overlay p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.75);
+}
+
+.product-card:hover .product-overlay,
+.product-card:active .product-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
